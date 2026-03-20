@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kumar | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #00ff9d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00ff9d;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 255 157 / 0.15);
+        }
+
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            background-color: #00ff9d;
+            color: #000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-xl font-bold heading-font">HK</div>
+                <span class="text-2xl font-semibold tracking-tighter heading-font">Harsh Kumar</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://linkedin.com/in/harshkumar-29" target="_blank" 
+                   class="px-5 py-2.5 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center gap-2 transition-all">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="hidden sm:inline">LinkedIn</span>
+                </a>
+                <a href="resume.pdf" target="_blank"
+                   class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-black rounded-2xl text-sm font-semibold flex items-center gap-2 transition-all">
+                  <i class="fas fa-download"></i>
+                     Resume
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-3xl text-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Open to Internships • Meerut, India
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter heading-font">
+                    Harsh Kumar
+                </h1>
+                
+                <p class="text-3xl text-zinc-400 font-medium">Computer Science Engineer</p>
+                
+                <p class="text-zinc-300 text-lg max-w-lg">
+                    Passionate about building scalable applications and solving complex problems. 
+                    Currently pursuing B.Tech in Computer Science with strong fundamentals in DSA, Web Development &amp; Computer Vision.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" 
+                       class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold rounded-3xl flex items-center gap-3 group">
+                        View My Work
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-white/30 hover:border-white/70 font-medium rounded-3xl flex items-center gap-3">
+                        Let's Connect
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm">
+                    <div>
+                        <span class="block text-emerald-400 text-2xl font-semibold">8.11</span>
+                        <span class="text-zinc-400">CGPA</span>
+                    </div>
+                    <div class="h-8 w-px bg-white/20"></div>
+                    <div>
+                        <span class="block text-emerald-400 text-2xl font-semibold">3</span>
+                        <span class="text-zinc-400">Live Projects</span>
+                    </div>
+                    <div class="h-8 w-px bg-white/20"></div>
+                    <div>
+                        <span class="block text-emerald-400 text-2xl font-semibold">2023</span>
+                        <span class="text-zinc-400">B.Tech Started</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="relative">
+                <div class="aspect-square bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 relative">
+                    <!-- You can replace this with your actual photo -->
+                    <img src="profile.jpg" 
+                      alt="Harsh Kumar" 
+                      class="w-full h-full object-cover">
+                    <!-- Overlay badge -->
+                    <div class="absolute bottom-8 left-8 bg-black/80 backdrop-blur-md px-6 py-3 rounded-2xl flex items-center gap-3">
+                        <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium">Available for Internships</span>
+                    </div>
+                </div>
+                
+                <!-- Floating tech badges -->
+                <div class="absolute -top-6 -right-6 bg-zinc-900 border border-white/10 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-2xl">
+                    <i class="fab fa-python text-2xl text-emerald-400"></i>
+                    <i class="fab fa-js text-2xl text-yellow-400"></i>
+                    <i class="fas fa-database text-2xl text-blue-400"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2">
+            <div class="text-xs tracking-widest opacity-50">SCROLL TO EXPLORE</div>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-24">
+                        <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-4">
+                            <i class="fas fa-user"></i>
+                            CHAPTER 01
+                        </div>
+                        <h2 class="heading-font text-5xl font-semibold leading-none mb-8">
+                            About Me
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 text-lg text-zinc-300 leading-relaxed">
+                    <p class="mb-6">
+                        Computer Science Engineering student with strong fundamentals in Data Structures, Algorithms, OOP, DBMS, and Operating Systems. 
+                        Passionate about software development, problem-solving, and building scalable applications.
+                    </p>
+                    <p>
+                        Currently seeking internship or software developer opportunities to apply my technical and analytical skills in real-world projects. 
+                        I love turning ideas into functional products — from eye-tracking systems to beautiful web interfaces.
+                    </p>
+                    
+                    <div class="mt-12 flex flex-wrap gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center text-3xl">🇮🇳</div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Based in</div>
+                                <div class="font-medium">Meerut, Uttar Pradesh</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-3xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Currently</div>
+                                <div class="font-medium">B.Tech CSE • 3rd Year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-3">
+                    <i class="fas fa-code"></i>
+                    CHAPTER 02
+                </div>
+                <h2 class="heading-font text-5xl font-semibold">Technical Arsenal</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Languages -->
+                <div class="bg-zinc-950 border border-white/10 rounded-3xl p-8">
+                    <h3 class="text-emerald-400 text-sm font-medium mb-6 flex items-center gap-2">
+                        <i class="fas fa-terminal"></i>
+                        LANGUAGES
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">C</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">C++</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Python</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">JavaScript</span>
+                    </div>
+                </div>
+                
+                <!-- Core -->
+                <div class="bg-zinc-950 border border-white/10 rounded-3xl p-8">
+                    <h3 class="text-emerald-400 text-sm font-medium mb-6 flex items-center gap-2">
+                        <i class="fas fa-brain"></i>
+                        CORE CONCEPTS
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Data Structures</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Algorithms</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">OOP</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">DBMS</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Operating Systems</span>
+                    </div>
+                </div>
+                
+                <!-- Web -->
+                <div class="bg-zinc-950 border border-white/10 rounded-3xl p-8">
+                    <h3 class="text-emerald-400 text-sm font-medium mb-6 flex items-center gap-2">
+                        <i class="fas fa-globe"></i>
+                        WEB TECHNOLOGIES
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">HTML</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">CSS</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">JavaScript</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Responsive Design</span>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="bg-zinc-950 border border-white/10 rounded-3xl p-8">
+                    <h3 class="text-emerald-400 text-sm font-medium mb-6 flex items-center gap-2">
+                        <i class="fas fa-tools"></i>
+                        TOOLS &amp; LIBRARIES
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">NumPy</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Pandas</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Tkinter</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">Git / GitHub</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">VS Code</span>
+                        <span class="skill-pill bg-white/10 text-white px-5 py-2 rounded-3xl text-sm font-medium">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-3">
+                        <i class="fas fa-laptop-code"></i>
+                        CHAPTER 03
+                    </div>
+                    <h2 class="heading-font text-5xl font-semibold">Featured Projects</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-2 text-sm font-medium group">
+                    View all on GitHub 
+                    <span class="group-hover:translate-x-2 transition">→</span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative">
+                        <img src="https://picsum.photos/id/1016/600/400" alt="Eye-Controlled Mouse" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fas fa-eye"></i>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs bg-emerald-900 text-emerald-300 px-4 py-1 rounded-full">Python</span>
+                            <span class="text-xs bg-blue-900 text-blue-300 px-4 py-1 rounded-full">OpenCV</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Eye-Controlled Virtual Mouse</h3>
+                        <ul class="text-sm text-zinc-400 space-y-2 mb-6">
+                            <li class="flex items-start gap-2">• Developed real-time eye-tracking mouse using webcam and facial landmarks</li>
+                            <li class="flex items-start gap-2">• Enabled hands-free cursor control through eye movement detection</li>
+                        </ul>
+                        <a href="#" class="text-emerald-400 text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative">
+                        <img src="https://picsum.photos/id/201/600/400" alt="E-Commerce Website" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Frontend</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs bg-orange-900 text-orange-300 px-4 py-1 rounded-full">HTML</span>
+                            <span class="text-xs bg-blue-900 text-blue-300 px-4 py-1 rounded-full">CSS</span>
+                            <span class="text-xs bg-yellow-900 text-yellow-300 px-4 py-1 rounded-full">JS</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">E-Commerce Website</h3>
+                        <ul class="text-sm text-zinc-400 space-y-2 mb-6">
+                            <li class="flex items-start gap-2">• Built responsive UI with structured product layout and smooth navigation</li>
+                            <li class="flex items-start gap-2">• Designed modern, mobile-friendly frontend using UI/UX best practices</li>
+                        </ul>
+                        <a href="#" class="text-emerald-400 text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                            View Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative">
+                        <img src="https://picsum.photos/id/29/600/400" alt="Digital Clock" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fas fa-clock"></i>
+                            <span>GUI</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs bg-emerald-900 text-emerald-300 px-4 py-1 rounded-full">Python</span>
+                            <span class="text-xs bg-purple-900 text-purple-300 px-4 py-1 rounded-full">Tkinter</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Digital Clock</h3>
+                        <ul class="text-sm text-zinc-400 space-y-2 mb-6">
+                            <li class="flex items-start gap-2">• Created GUI-based real-time digital clock using event-driven programming</li>
+                            <li class="flex items-start gap-2">• Implemented auto-refresh using Tkinter after() function</li>
+                        </ul>
+                        <a href="#" class="text-emerald-400 text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                            View Source <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION + LEADERSHIP -->
+    <section id="education" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20">
+                <!-- Education -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-6">
+                        <i class="fas fa-graduation-cap"></i>
+                        EDUCATION
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-white/10 rounded-2xl flex-shrink-0"></div>
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-semibold">B.Tech – Computer Science and Engineering</h3>
+                                        <p class="text-emerald-400">Shobhit Institute of Engineering and Technology, Meerut</p>
+                                    </div>
+                                    <div class="text-right text-sm text-zinc-400">
+                                        2023 – Present<br>
+                                        CGPA: <span class="text-emerald-400 font-medium">8.11</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leadership -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-6">
+                        <i class="fas fa-users"></i>
+                        LEADERSHIP &amp; ACTIVITIES
+                    </div>
+                    <div class="space-y-8 text-zinc-300">
+                        <div>
+                            <div class="font-medium">Participant – E-Summit 2023, IIT Kanpur</div>
+                            <div class="text-sm text-zinc-400">Learned entrepreneurship, innovation, and startup ecosystem concepts.</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Volunteer – International Conference, Shobhit University</div>
+                            <div class="text-sm text-zinc-400">Assisted in event coordination and strengthened teamwork skills.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium tracking-widest mb-3">
+                    <i class="fas fa-certificate"></i>
+                    CHAPTER 04
+                </div>
+                <h2 class="heading-font text-5xl font-semibold">Certifications</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 flex items-start gap-6">
+                    <div class="text-4xl">📜</div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">GeeksforGeeks Certification</h4>
+                        <p class="text-zinc-400 text-sm mt-1">Core DSA &amp; Problem Solving</p>
+                        <a href="https://media.geeksforgeeks.org/courses/certificates/e81f701b7a6327436bcc82493fc6b993.pdf" 
+                           target="_blank" 
+                          class="mt-5 inline-flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 px-5 py-2.5 rounded-xl text-emerald-300 text-sm font-medium transition-all group-hover:gap-3">
+                          📄 View / Download Certificate (PDF)
+                          <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 flex items-start gap-6">
+                    <div class="text-4xl">📜</div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold">NumPy for Data Science (Udemy)</h4>
+                        <p class="text-zinc-400 text-sm mt-1">Data Analysis &amp; Scientific Computing</p>
+                        <a href="https://www.udemy.com/certificate/UC-5cc49b12-9a36-4e22-b243-df06467540bc/" 
+                          target="_blank" 
+                          class="mt-5 inline-flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 px-4 py-2 rounded-xl text-emerald-300 text-sm font-medium transition-all group-hover:gap-3">
+                          View / Verify Certificate <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="heading-font text-5xl font-semibold mb-8">Let's build something<br>great together</h2>
+                    <p class="text-xl text-zinc-400 max-w-md">Whether it's an internship opportunity or a collaboration — I'm just one message away.</p>
+                    
+                    <div class="mt-16 space-y-8">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl">✉️</div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Email</div>
+                                <a href="mailto:harshkumar4830@gmail.com" class="font-medium">harshkumar4830@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl">📱</div>
+                            <div>
+                                <div class="text-sm text-zinc-400">Phone</div>
+                                <a href="tel:+919693995795" class="font-medium">+91 96939 95795</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl">🔗</div>
+                            <div>
+                                <div class="text-sm text-zinc-400">LinkedIn</div>
+                                <a href="https://linkedin.com/in/harshkumar-29" target="_blank" class="font-medium">linkedin.com/in/harshkumar-29</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Simple contact form -->
+                <div class="bg-zinc-950 border border-white/10 rounded-3xl p-10">
+                    <form action=https://formspree.io/f/xpqynpny method="POST">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="text-xs text-zinc-400 block mb-2">YOUR NAME</label>
+                                <input type="text" name="name" required
+                                       class="w-full bg-transparent border border-white/20 focus:border-emerald-400 rounded-2xl px-6 py-4 text-sm outline-none">
+                            </div>
+                            <div>
+                                <label class="text-xs text-zinc-400 block mb-2">EMAIL ADDRESS</label>
+                                <input type="email" name="email" required
+                                       class="w-full bg-transparent border border-white/20 focus:border-emerald-400 rounded-2xl px-6 py-4 text-sm outline-none">
+                            </div>
+                            <div>
+                                <label class="text-xs text-zinc-400 block mb-2">MESSAGE</label>
+                                <textarea name="message" rows="5" required
+                                    class="w-full bg-transparent border border-white/20 focus:border-emerald-400 rounded-2xl px-6 py-4 text-sm outline-none resize-none"></textarea>
+                            </div>
+                            <button type="submit"
+                                    class="w-full py-5 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold rounded-2xl transition-all">
+                                SEND MESSAGE
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 text-center text-xs text-zinc-400">
+            <p>© 2026 Harsh Kumar. Built with passion and Tailwind CSS.</p>
+            <p class="mt-2">This portfolio is 100% self-coded and fully responsive.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            // Already loaded via CDN
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Simple form submission alert (remove this whole block)
+         document.querySelector('form').addEventListener('submit', function(e) { ... });
+        
+        // Keyboard shortcut hint
+        console.log('%c👀 Pro tip: Press "/" to quickly jump to Projects section', 'color:#00ff9d; font-size:10px');
+    </script>
+</body>
+</html>
